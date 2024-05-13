@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1000"
-   height="300"
-   viewBox="0 0 264.58332 79.374996"
+   width="420mm"
+   height="297mm"
+   viewBox="0 0 419.99998 296.99999"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.0141844"
-     inkscape:cx="221.36014"
-     inkscape:cy="24.157343"
+     inkscape:zoom="2.0283688"
+     inkscape:cx="357.67657"
+     inkscape:cy="521.35489"
      inkscape:window-width="1920"
      inkscape:window-height="1043"
      inkscape:window-x="1920"
@@ -169,30 +169,67 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.4048px;font-family:Dosis;-inkscape-font-specification:Dosis;fill:#000000;fill-opacity:1;stroke-width:3.11706"
-       x="65.523827"
-       y="74.177155"
+       x="50.52383"
+       y="89.177155"
        id="text81"><tspan
          sodipodi:role="line"
          id="tspan81"
          style="stroke-width:3.11706"
-         x="65.523827"
-         y="74.177155">K</tspan></text>
+         x="50.52383"
+         y="89.177155">K</tspan></text>
+    <path
+       style="font-size:37.4048px;font-family:'Droid Sans Fallback';-inkscape-font-specification:'Droid Sans Fallback';stroke-width:3.11706"
+       d="m 81.706508,151.98371 h 3.68934 v 11.52462 L 97.63277,151.98371 h 4.74866 L 88.847756,164.6955 103.34942,179.25195 H 98.491181 L 85.395848,166.12009 v 13.13186 h -3.68934 z"
+       id="text81-7"
+       aria-label="K" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.4048px;font-family:Dosis;-inkscape-font-specification:Dosis;fill:#000000;fill-opacity:1;stroke-width:3.11706"
-       x="119.92535"
-       y="74.251968"
+       x="251.90852"
+       y="89.688354"
        id="text81-6"><tspan
          sodipodi:role="line"
          id="tspan81-5"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'JetBrains Mono NL';-inkscape-font-specification:'JetBrains Mono NL';stroke-width:3.11706"
-         x="119.92535"
-         y="74.251968">K</tspan></text>
+         x="251.90852"
+         y="89.688354">K</tspan></text>
     <path
        style="font-size:37.4048px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';fill:#000000;fill-opacity:1;stroke-width:3.117;stroke-dasharray:none"
-       d="m 102.70427,74.251968 h -9.337678 l 5.539656,-26.432726 h 3.798022 z m 0.19182,-14.117915 9.89789,-12.314811 h 4.27757 l -9.85952,12.065446 10.58844,14.36728 h -4.64203 z"
+       d="m 159.98851,89.251964 h -9.33768 l 5.53966,-26.432726 h 3.79802 z m 0.19182,-14.117915 9.89789,-12.314811 h 4.27757 l -9.85952,12.065446 10.58844,14.36728 h -4.64203 z"
        id="text81-3"
        aria-label="K"
        sodipodi:nodetypes="cccccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'JetBrains Mono NL';-inkscape-font-specification:'JetBrains Mono NL';fill:#000000;fill-opacity:1;stroke-width:3.117;stroke-dasharray:none"
+       x="69.899521"
+       y="140.64566"
+       id="text82"><tspan
+         sodipodi:role="line"
+         id="tspan82"
+         style="stroke-width:3.117"></tspan></text>
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:3.117;stroke-dasharray:none"
+       id="rect82"
+       width="2"
+       height="41.999996"
+       x="119.03543"
+       y="151.25197" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:2.25592;stroke-dasharray:none"
+       id="rect82-4"
+       width="2"
+       height="21.999985"
+       x="203.60028"
+       y="-5.1409817"
+       transform="rotate(49.375399)" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:2.25592;stroke-dasharray:none"
+       id="rect82-4-3"
+       width="2"
+       height="21.999985"
+       x="-48.194351"
+       y="-220.19302"
+       transform="matrix(0.65110016,-0.75899182,-0.75899182,-0.65110016,0,0)" />
   </g>
 </svg>
