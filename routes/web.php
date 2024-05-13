@@ -1,5 +1,7 @@
 <?php
 
+namespace webRoute;
+
 use Illuminate\Support\Facades\Route;
 
 function getPlaceHolderImg(): array
@@ -16,4 +18,7 @@ function getPlaceHolderImg(): array
 }
 Route::get('/', function () {
     return view('homepage', ["images" => getPlaceHolderImg()]);
+});
+Route::get('/registration', function () {
+    return view('registration');
 });
