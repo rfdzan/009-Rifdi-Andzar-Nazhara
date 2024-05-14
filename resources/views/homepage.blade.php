@@ -4,8 +4,10 @@
 <section class="section-homepage-images">
     <h2>Recent Works</h2>
     <ul>
-        @foreach ($images as $img)
-        <img src="{{$img}}" height="200px">
+        @foreach ($images as $name => $path)
+        <a href="artwork?id={{$name}}">
+            <img src="{{$path}}" height="200px">
+        </a>
         @endforeach
     </ul>
 </section>

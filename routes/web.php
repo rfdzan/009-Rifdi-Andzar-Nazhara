@@ -17,7 +17,14 @@ function getPlaceHolderImg(): array
     return $asLink;
 }
 Route::get('/', function () {
-    return view('homepage', ["images" => getPlaceHolderImg()]);
+    $toSend = [];
+    foreach (getPlaceHolderImg() as $path) {
+        $info = pathinfo($path);
+        $name = $info['filename'];
+        $toSend[$name] = $path;
+    }
+    var_dump($toSend);
+    return view('homepage', ["images" => $toSend]);
 });
 Route::get('/registration', function () {
     return view('registration');
