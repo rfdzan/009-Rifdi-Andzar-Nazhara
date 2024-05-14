@@ -1,10 +1,14 @@
 <section class="navbar">
     <div class="top-bar-container">
         <div class="img-container">
-            <img class="site-logo" src="placeholder_logo.png" width="50" height="50">
+            <a href="/">
+                <img class="site-logo" src="placeholder_logo.png" width="50" height="50">
+            </a>
         </div>
         <div class="home-link-container">
-            <p class="home-link">Home</p>
+            <a href="/">
+                <p class="home-link">Home</p>
+            </a>
         </div>
         <div class="search-box-container">
             <form id="search-box">
@@ -13,7 +17,9 @@
             </form>
         </div>
         <div class="sign-in-container">
-            <p class="sign-in-text">Sign Up/Log in</p>
+            <a href="/registration">
+                <p class="sign-in-text">Sign Up/Log in</p>
+            </a>
         </div>
     </div>
 </section>

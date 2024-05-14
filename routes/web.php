@@ -23,7 +23,6 @@ Route::get('/', function () {
         $name = $info['filename'];
         $toSend[$name] = $path;
     }
-    var_dump($toSend);
     return view('homepage', ["images" => $toSend]);
 });
 Route::get('/registration', function () {
