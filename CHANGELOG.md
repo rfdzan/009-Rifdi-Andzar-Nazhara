@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Priority pages and routes (home, image, user, login).
+- Placeholder stock images.
+- Site logo designs.
 ## [0.0.0] - 2024-05-10
 ### Added
 - Remote repository and project details.
