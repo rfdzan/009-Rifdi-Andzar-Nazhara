@@ -22,14 +22,9 @@ Route::get('/', function () {
 Route::get('/registration', function () {
     return view('registration');
 });
-Route::get('/{user}', function (string $user) {
-    return view('user', ['name' => $user]);
-});
-Route::get('/artwork/', function () {
-    return view('artwork_homepage');
-});
-Route::get('/artwork/{id}', function (string $id) {
+Route::get('/artwork', function () {
     $links = getPlaceHolderImg();
+    $id = request()->get('id');
     foreach ($links as $path) {
         $info = pathinfo($path);
         $name = $info['filename'];
@@ -39,7 +34,10 @@ Route::get('/artwork/{id}', function (string $id) {
     }
     return redirect()->route('err_page')->with(['msg' => "artwork of id '{$id}' was not found"]);
 });
-Route::get('/error/err', function () {
+Route::get('/error', function () {
     $msg = session()->get('msg');
     return view('err', ['msg' => $msg]);
 })->name('err_page');
+Route::get('/{user}', function (string $user) {
+    return view('user', ['name' => $user]);
+});
