@@ -16,6 +16,10 @@ function getPlaceHolderImg(): array
     }
     return $asLink;
 }
+function getPlaceHolderAuthors(): array
+{
+    return array('104827' => 'bob', '416160' => 'jole', '45201' => 'luna', '57416' => 'rudy', '96938' => 'elena');
+}
 Route::get('/', function () {
     $toSend = [];
     foreach (getPlaceHolderImg() as $path) {
@@ -30,12 +34,13 @@ Route::get('/registration', function () {
 });
 Route::get('/artwork', function () {
     $links = getPlaceHolderImg();
+
     $id = request()->get('id');
     foreach ($links as $path) {
         $info = pathinfo($path);
         $name = $info['filename'];
         if (strcmp($id, $name) == 0) {
-            return view('artwork', ["artwork_name" => $name, "path" => $path]);
+            return view('artwork', ["artwork_name" => $name, "author" => getPlaceHolderAuthors()[$name], "path" => $path]);
         }
     }
     return redirect()->route('err_page')->with(['msg' => "artwork of id '{$id}' was not found"]);
