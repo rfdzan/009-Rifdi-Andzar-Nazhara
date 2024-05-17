@@ -9,18 +9,31 @@
   margin-left: 0;
 }
 
-#user-profile {}
+.user-upload {
+  right: 60%;
+}
 
-.section-user-artworks {
+.user-works-title {
+  width: 80%;
+  float: left;
+}
+
+.user-upload {
+  margin-top: 5%;
+  width: 20%;
+  float: left;
+}
+
+.div-user-artworks {
   width: 70%;
   float: left;
 }
 
-.section-user-artworks h2 {
+.div-user-artworks h2 {
   color: blue;
 }
 
-.section-user-sidebar {
+.div-user-sidebar {
   width: 30%;
   float: left;
 }
