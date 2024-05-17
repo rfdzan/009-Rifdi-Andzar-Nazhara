@@ -7,12 +7,6 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ImageController::class, "getPath"]);
-
-function getPlaceHolderAuthors(): array
-{
-    return array('104827' => 'bob', '416160' => 'jole', '45201' => 'luna', '57416' => 'rudy', '96938' => 'elena');
-}
-
 Route::get('/registration', function () {
     return view('registration');
 });

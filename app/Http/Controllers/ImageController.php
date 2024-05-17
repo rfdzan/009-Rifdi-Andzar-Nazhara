@@ -18,6 +18,11 @@ class ImageController extends Controller
         }
         return $asLink;
     }
+    private function getPlaceHolderAuthors(): array
+    {
+        return array('104827' => 'bob', '416160' => 'jole', '45201' => 'luna', '57416' => 'rudy', '96938' => 'elena');
+    }
+
     function getPath(): View
     {
         $toSend = [];
@@ -36,7 +41,7 @@ class ImageController extends Controller
             $name = $info['filename'];
             if (strcmp($id, $name) == 0) {
                 $success = true;
-                return (object) array("view" => view('artwork', ["artwork_name" => $name, "path" => $path]), "success" => $success);
+                return (object) array("view" => view('artwork', ["artwork_name" => $name, "path" => $path, "author" => $this->getPlaceHolderAuthors()[$name]]), "success" => $success);
             }
         }
         return (object) array("view" => null, "success" => $success);
