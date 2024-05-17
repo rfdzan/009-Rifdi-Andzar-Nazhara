@@ -9,6 +9,22 @@
   margin-left: 0;
 }
 
+#user-profile {}
+
+.section-user-artworks {
+  width: 70%;
+  float: left;
+}
+
+.section-user-artworks h2 {
+  color: blue;
+}
+
+.section-user-sidebar {
+  width: 30%;
+  float: left;
+}
+
 .section-homepage-images {
   display: flexbox;
   flex-wrap: wrap;
