@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Priority pages and routes (home, image, user, login).
+- Priority pages and routes to and fro (home, image, user, login).
 - Placeholder stock images.
 - Site logo designs.
+- Upload button on user page.
 ## [0.0.0] - 2024-05-10
 ### Added
 - Remote repository and project details.
