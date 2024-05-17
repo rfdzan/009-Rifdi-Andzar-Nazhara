@@ -7,7 +7,9 @@
     <section class="artwork-description">
         <h3>Author:</h3>
         <div>
-            <p>{{$author}}</p>
+            <a href="/{{$author}}">
+                <p>{{$author}}</p>
+            </a>
         </div>
     </section>
 </section>

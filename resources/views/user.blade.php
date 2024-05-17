@@ -1,7 +1,6 @@
 @extends('layout.default')
 @section('content')
 <!-- User section -->
-<section>
     <div class="div-user-artworks">
         <div class="user-works-title">
             <h2>Works</h2>

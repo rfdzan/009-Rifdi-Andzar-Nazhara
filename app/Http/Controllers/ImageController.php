@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
+use App\Http\Controllers\UserController;
 
 class ImageController extends Controller
 {
@@ -18,30 +19,32 @@ class ImageController extends Controller
         }
         return $asLink;
     }
-    private function getPlaceHolderAuthors(): array
-    {
-        return array('104827' => 'bob', '416160' => 'jole', '45201' => 'luna', '57416' => 'rudy', '96938' => 'elena');
-    }
-
-    function getPath(): View
+    function getPath(): array
     {
         $toSend = [];
         foreach ($this->getPlaceHolderIMage() as $path) {
             $info = pathinfo($path);
-            $name = $info['filename'];
-            $toSend[$name] = $path;
+            $id = $info['filename'];
+            $toSend[$id] = $path;
         }
-        return view('homepage', ["images" => $toSend]);
+        return $toSend;
+    }
+    /**
+     * This needs to move out from this class.
+     */
+    function temp_homepage(): View
+    {
+        return view('homepage', ["images" => $this->getPath()]);
     }
     function getArtwork(string $id): object
     {
+        $authors = new UserController();
         $success = false;
-        foreach ($this->getPlaceHolderIMage() as $path) {
-            $info = pathinfo($path);
-            $name = $info['filename'];
-            if (strcmp($id, $name) == 0) {
+        foreach ($this->getPath() as $image_id => $path) {
+            if (strcmp($id, $image_id) == 0) {
                 $success = true;
-                return (object) array("view" => view('artwork', ["artwork_name" => $name, "path" => $path, "author" => $this->getPlaceHolderAuthors()[$name]]), "success" => $success);
+                $author = array_search($id, $authors->getPlaceHolderAuthors());
+                return (object) array("view" => view('artwork', ["artwork_name" => $image_id, "path" => $path, "author" => $author]), "success" => $success);
             }
         }
         return (object) array("view" => null, "success" => $success);
