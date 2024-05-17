@@ -2,40 +2,21 @@
 
 namespace webRoute;
 
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-function getPlaceHolderImg(): array
-{
-    $dir = 'kanvas_placeholder_images/';
-    $file = scandir($dir);
-    $images = array_slice($file, 2);
-    $asLink = [];
-    foreach ($images as $image) {
-        $link = $dir . $image;
-        array_push($asLink, $link);
-    }
-    return $asLink;
-}
-Route::get('/', function () {
-    $toSend = [];
-    foreach (getPlaceHolderImg() as $path) {
-        $info = pathinfo($path);
-        $name = $info['filename'];
-        $toSend[$name] = $path;
-    }
-    return view('homepage', ["images" => $toSend]);
-});
+Route::get('/', [ImageController::class, "getPath"]);
 Route::get('/registration', function () {
     return view('registration');
 });
 Route::get('/artwork', function () {
-    $links = getPlaceHolderImg();
+    $controller = new ImageController();
     $id = request()->get('id');
-    foreach ($links as $path) {
-        $info = pathinfo($path);
-        $name = $info['filename'];
-        if (strcmp($id, $name) == 0) {
-            return view('artwork', ["artwork_name" => $name, "path" => $path]);
+    if ($id !== null) {
+        $links = $controller->getArtwork($id);
+        if ($links->success === true) {
+            return $links->view;
         }
     }
     return redirect()->route('err_page')->with(['msg' => "artwork of id '{$id}' was not found"]);
@@ -44,6 +25,6 @@ Route::get('/error', function () {
     $msg = session()->get('msg');
     return view('err', ['msg' => $msg]);
 })->name('err_page');
-Route::get('/{user}', function (string $user) {
-    return view('user', ['name' => $user]);
+Route::get('/{user}', [UserController::class, "getUser"], function () {
+    return view('user', ['name' => "getUser"]);
 });
