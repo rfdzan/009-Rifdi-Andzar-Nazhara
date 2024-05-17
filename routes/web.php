@@ -25,4 +25,7 @@ Route::get('/error', function () {
     $msg = session()->get('msg');
     return view('err', ['msg' => $msg]);
 })->name('err_page');
-Route::get('/{user}', [UserController::class, "getUserPage"]);
+Route::post('/{user}/upload', function (string $user) {
+    return view('upload');
+});
+Route::get('/{user}', [UserController::class, "getUserPage"])->name("user");
