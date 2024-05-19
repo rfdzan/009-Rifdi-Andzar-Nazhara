@@ -49,6 +49,10 @@ class ImageController extends Controller
                 $success = true;
                 $fake_db = $authors->getPlaceHolderAuthors();
                 foreach ($fake_db as $author => $artwork_array) {
+                    $result = array_search($id, $artwork_array);
+                    if ($result === false) {
+                        continue;
+                    }
                     return (object) array("view" => view('artwork', ["artwork_name" => $image_id, "path" => $path, "author" => $author]), "success" => $success);
                 }
             }
