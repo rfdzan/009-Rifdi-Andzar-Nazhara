@@ -10,7 +10,7 @@
             @csrf
             <div>
                 <label for="file">Upload</label>
-                <input id="upload-artwork" type="file" name="file" accept="image/*" multiple>
+                <input id="upload-artwork" type="file" name="file[]" accept="image/*" multiple>
                 <input type="submit" value="Submit">
             </div>
         </form>

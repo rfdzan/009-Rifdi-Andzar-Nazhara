@@ -9,8 +9,9 @@ class UploadController extends Controller
     function upload(string $name)
     {
         $files = request()->file("file");
-        var_dump($files);
-        var_dump($name);
+        foreach ($files as $file) {
+            var_dump($file->extension());
+        }
         return view('upload');
     }
 }

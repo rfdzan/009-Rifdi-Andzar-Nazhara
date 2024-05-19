@@ -14,6 +14,10 @@ class ImageController extends Controller
         $images = array_slice($file, 2);
         $asLink = [];
         foreach ($images as $image) {
+            $pathinfo = pathinfo($image);
+            if ($pathinfo['extension'] === "json") {
+                continue;
+            }
             $link = $dir . $image;
             array_push($asLink, $link);
         }
@@ -43,8 +47,10 @@ class ImageController extends Controller
         foreach ($this->getPath() as $image_id => $path) {
             if (strcmp($id, $image_id) == 0) {
                 $success = true;
-                $author = array_search($id, $authors->getPlaceHolderAuthors());
-                return (object) array("view" => view('artwork', ["artwork_name" => $image_id, "path" => $path, "author" => $author]), "success" => $success);
+                $fake_db = $authors->getPlaceHolderAuthors();
+                foreach ($fake_db as $author => $artwork_array) {
+                    return (object) array("view" => view('artwork', ["artwork_name" => $image_id, "path" => $path, "author" => $author]), "success" => $success);
+                }
             }
         }
         return (object) array("view" => null, "success" => $success);
