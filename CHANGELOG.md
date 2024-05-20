@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Placeholder stock images.
 - Site logo designs.
 - Upload button on user page.
+- Database migration and model.
 ## [0.0.0] - 2024-05-10
 ### Added
 - Remote repository and project details.
