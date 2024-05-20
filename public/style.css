@@ -9,6 +9,10 @@
   margin-left: 0;
 }
 
+.user-upload-form {
+  margin-right: 2%;
+}
+
 .user-upload {
   right: 60%;
 }

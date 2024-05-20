@@ -3,6 +3,7 @@
 namespace webRoute;
 
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +26,8 @@ Route::get('/error', function () {
     $msg = session()->get('msg');
     return view('err', ['msg' => $msg]);
 })->name('err_page');
-Route::post('/{user}/upload', function (string $user) {
-    return view('upload');
-});
+Route::post(
+    '/{user}/upload',
+    [UploadController::class, "upload"]
+)->name("artwork_upload");
 Route::get('/{user}', [UserController::class, "getUserPage"])->name("user");
