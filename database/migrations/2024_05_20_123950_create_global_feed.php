@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+// use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 // use Illuminate\Support\Facades\Schema;
 
@@ -11,11 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $create_user = DB::statement("CREATE TABLE IF NOT EXISTS user(
+        $create_global_feed = DB::statement("CREATE TABLE IF NOT EXISTS global_feed(
             id integer primary key auto_increment,
-            username varchar(32),
-            email text,
-            password text
+            user_id integer,
+            page_link text,
+            foreign key(user_id)
+            references user(id)
         )");
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        $delete_user_table = DB::delete("DELETE FROM user");
+        DB::delete("DELETE FROM global_feed");
     }
 };
