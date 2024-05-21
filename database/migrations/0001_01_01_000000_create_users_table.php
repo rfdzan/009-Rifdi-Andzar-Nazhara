@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        $delete_user_table = DB::delete("DELETE FROM user");
+        DB::delete("DELETE FROM user");
     }
 };

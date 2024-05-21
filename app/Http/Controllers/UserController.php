@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\ImageController;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 use stdClass;
