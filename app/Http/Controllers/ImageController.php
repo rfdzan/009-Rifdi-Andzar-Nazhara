@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
-use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\DB;
 
 class ImageController extends Controller
 {
@@ -23,40 +23,43 @@ class ImageController extends Controller
         }
         return $asLink;
     }
-    function getPath(): array
+    function getImages()
     {
-        $toSend = [];
-        foreach ($this->getPlaceHolderIMage() as $path) {
-            $info = pathinfo($path);
-            $id = $info['filename'];
-            $toSend[$id] = $path;
+        // $toSend = [];
+        $toSend2 = [];
+        $array_of_images = DB::select("SELECT id, user_id, source FROM illustration ORDER BY timestamp DESC");
+        if (count($array_of_images) === 0) {
+            return view('err', ['msg' => "no image found to be displayed in homepage"]);
         }
-        return $toSend;
+        foreach ($array_of_images as $images) {
+            $path = $images->source;
+            $id = $images->id;
+            $toSend2[$id] = $path;
+        }
+        //---------------------
+        // foreach ($this->getPlaceHolderIMage() as $path) {
+        //     $info = pathinfo($path);
+        //     $id = $info['filename'];
+        //     $toSend[$id] = $path;
+        // }
+        return $toSend2;
     }
     /**
      * This needs to move out from this class.
      */
     function temp_homepage(): View
     {
-        return view('homepage', ["images" => $this->getPath()]);
+        return view('homepage', ["images" => $this->getImages()]);
     }
     function getArtwork(string $id): object
     {
-        $authors = new UserController();
-        $success = false;
-        foreach ($this->getPath() as $image_id => $path) {
-            if (strcmp($id, $image_id) == 0) {
-                $success = true;
-                $fake_db = $authors->getPlaceHolderAuthors();
-                foreach ($fake_db as $author => $artwork_array) {
-                    $result = array_search($id, $artwork_array);
-                    if ($result === false) {
-                        continue;
-                    }
-                    return (object) array("view" => view('artwork', ["artwork_name" => $image_id, "path" => $path, "author" => $author]), "success" => $success);
-                }
-            }
-        }
-        return (object) array("view" => null, "success" => $success);
+        $id_as_int = (int) $id;
+        $select_artwork = DB::selectOne("SELECT id, user_id, title, source FROM illustration WHERE id = :id", ["id" => $id_as_int]);
+        $select_author = DB::selectOne("SELECT username FROM user WHERE id = :user_id", ["user_id" => $select_artwork->user_id]);
+        $success = true;
+        $title = $select_artwork->title;
+        $path = $select_artwork->source;
+        $author = $select_author->username;
+        return (object) array("view" => view('artwork', ["artwork_name" => $title, "path" => $path, "author" => $author]), "success" => $success);
     }
 }

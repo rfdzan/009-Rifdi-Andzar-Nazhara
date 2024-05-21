@@ -10,7 +10,6 @@ class UploadController extends Controller
 {
     function upload(string $name)
     {
-        // figure out how to get the destination path 
         $files = request()->file("file");
         DB::beginTransaction();
         $id_array = DB::select("SELECT (id) FROM user WHERE username = :name", ["name" => $name]);
@@ -25,7 +24,7 @@ class UploadController extends Controller
         foreach ($files as $file) {
             $generated_id = Storage::disk('jda')->putFile('', $file);
             $current_time = date('Y-m-d H:i:s');
-            $image_path = storage_path(Storage::disk('jda')->path($generated_id));
+            $image_path = 'jda/' . $generated_id;
             if ($generated_id === false) {
                 DB::rollBack();
                 return view('upload', ["upload_msg" => "Upload failed"]);

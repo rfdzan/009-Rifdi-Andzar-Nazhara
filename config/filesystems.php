@@ -38,7 +38,8 @@ return [
         'jda' => [
             'driver' => 'local',
             'root' => storage_path('app/jda'),
-            'visibility' => 'private',
+            'url' => env('APP_URL') . '/storage/app/jda',
+            'visibility' => 'public',
             'throw' => false
         ],
 
@@ -77,6 +78,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('jda') => storage_path('app/jda')
     ],
 
 ];
