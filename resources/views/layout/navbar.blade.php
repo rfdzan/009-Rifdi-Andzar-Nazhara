@@ -2,7 +2,7 @@
     <div class="top-bar-container">
         <div class="img-container">
             <a href="/">
-                <img class="site-logo" src="placeholder_logo.png" width="50" height="50">
+                <img class="site-logo" src="{{asset('placeholder_logo.png')}}" width="50" height="50">
             </a>
         </div>
         <div class="home-link-container">
