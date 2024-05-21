@@ -2,16 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
     function upload(string $name)
     {
+        // figure out how to get the destination path 
         $files = request()->file("file");
-        foreach ($files as $file) {
-            var_dump($file->extension());
+        DB::beginTransaction();
+        $id_array = DB::select("SELECT (id) FROM user WHERE username = :name", ["name" => $name]);
+        if (count($id_array) === 0) {
+            return view('upload', ["upload_msg" => "user {$name} not found"]);
         }
-        return view('upload');
+        if (count($id_array) > 1) {
+            return view('upload', ["upload_msg" => "BUG: duplicate name found for: {$name}"]);
+        }
+        $id = array_pop($id_array)->id;
+        // return view('upload', ["upload_msg" => "testing"]);
+        foreach ($files as $file) {
+            $generated_id = Storage::disk('jda')->putFile('', $file);
+            $current_time = date('Y-m-d H:i:s');
+            $image_path = storage_path(Storage::disk('jda')->path($generated_id));
+            if ($generated_id === false) {
+                DB::rollBack();
+                return view('upload', ["upload_msg" => "Upload failed"]);
+            }
+            DB::insert("INSERT INTO illustration(
+                user_id,
+                title,
+                timestamp,
+                source,
+                generated_unique_name,
+                category
+            ) VALUES(
+                :user_id,
+                :title,
+                :timestamp,
+                :source,
+                :generated_unique_name,
+                :category
+            )", ["user_id" => $id, "title" => $generated_id, "timestamp" => $current_time, "source" => $image_path, "generated_unique_name" => $generated_id, "category" => "image"]);
+        }
+        DB::commit();
+        return view('upload', ["upload_msg" => "Upload complete!"]);
     }
 }

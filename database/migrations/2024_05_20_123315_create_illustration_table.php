@@ -18,7 +18,7 @@ return new class extends Migration
             title varchar(140),
             timestamp datetime,
             source text,
-            page_link text,
+            generated_unique_name text,
             category varchar(45),
             foreign key(user_id)     
             references user(id)
