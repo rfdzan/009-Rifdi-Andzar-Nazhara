@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Site logo designs.
 - Upload button on user page.
 - Database migration and model.
+- Uploaded image shows on homepage and individual user pages.
 ## [0.0.0] - 2024-05-10
 ### Added
 - Remote repository and project details.
