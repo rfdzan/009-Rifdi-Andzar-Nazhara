@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -20,7 +19,6 @@ class UploadController extends Controller
             return view('upload', ["upload_msg" => "BUG: duplicate name found for: {$name}"]);
         }
         $id = array_pop($id_array)->id;
-        // return view('upload', ["upload_msg" => "testing"]);
         foreach ($files as $file) {
             $generated_id = Storage::disk('jda')->putFile('', $file);
             $current_time = date('Y-m-d H:i:s');
