@@ -17,8 +17,11 @@ class UserController extends Controller
     function getUserPage(string $username): View
     {
         $select_user = DB::select("SELECT id FROM user WHERE username = :username", ["username" => $username]);
-        $user_id = array_pop($select_user)->id;
-        $select_illustration = DB::select("SELECT * FROM illustration WHERE user_id = :user_id", ["user_id" => $user_id]);
+        $pop_from_select = array_pop($select_user);
+        if (is_null($pop_from_select)) {
+            return view('err', ['msg' => "User '{$username}' was not found"]);
+        }
+        $select_illustration = DB::select("SELECT * FROM illustration WHERE user_id = :user_id", ["user_id" => $pop_from_select->id]);
         $artworks = [];
         foreach ($select_illustration as $image) {
             $image_id = $image->id;
