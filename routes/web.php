@@ -7,7 +7,7 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [ImageController::class, "temp_homepage"]);
+Route::get('/', [ImageController::class, "temp_homepage"])->name("home");
 Route::get('/registration', function () {
     return view('registration');
 });
