@@ -27,10 +27,16 @@ body {
 }
 
 .site-logo-container {
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0.5%;
+  padding-top: 5px;
   display: flex;
 }
 
 .site-logo {
+  width: 70px;
+  height: 70px;
   flex: 1 1 auto;
 }
 

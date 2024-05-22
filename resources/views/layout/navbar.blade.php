@@ -5,7 +5,7 @@
     <div class="navbar-container">
         <div class="site-logo-container">
             <a href="/">
-                <img class="site-logo" src="{{asset('placeholder_logo.png')}}" width="50" height="50">
+                <img class="site-logo" src="{{asset('logo.svg')}}">
             </a>
         </div>
         <div class="home-link-container">
