@@ -3,13 +3,17 @@
 <!-- Images Section-->
 <link rel="stylesheet" href="{{asset('css/homepage.css')}}">
 <section class="section-homepage-images">
-    <h2>Recent Works</h2>
-    <ul>
+    <div class="homepage-title">
+        <h2>Recent Works</h2>
+    </div>
+    <div class="homepage-image-parent">
         @foreach ($images as $name => $path)
-        <a href="artwork?id={{$name}}">
-            <img src="{{$path}}" height="200px">
-        </a>
+        <div class="homepage-image-container">
+            <a href="artwork?id={{$name}}">
+                <img src="{{$path}}" width="400px">
+            </a>
+        </div>
         @endforeach
-    </ul>
+    </div>
 </section>
 @endsection

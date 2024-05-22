@@ -1,13 +1,13 @@
 <section class="navbar">
     <div class="default-container">
-        <div class="img-container">
+        <div class="site-logo-container">
             <a href="/">
                 <img class="site-logo" src="{{asset('placeholder_logo.png')}}" width="50" height="50">
             </a>
         </div>
         <div class="home-link-container">
             <a href="/">
-                <p class="home-link">Home</p>
+                <p>Home</p>
             </a>
         </div>
         <div class="search-box-container">
@@ -18,7 +18,7 @@
         </div>
         <div class="sign-in-container">
             <a href="/registration">
-                <p class="sign-in-text">Sign Up/Log in</p>
+                <p>Sign Up/Log in</p>
             </a>
         </div>
     </div>

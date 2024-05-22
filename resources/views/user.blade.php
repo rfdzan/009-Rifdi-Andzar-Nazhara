@@ -16,7 +16,7 @@
             </div>
         </form>
         <button id="clear-file">Clear</button>
-        <script src="{{asset('upload.js')}}"></script>
+        <script src="{{asset('js/upload.js')}}"></script>
     </div>
     @foreach ($artworks as $art)
     <a href="artwork?id={{$art->id}}"><img src="{{$art->path}}" width="300px"></a>

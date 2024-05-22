@@ -1,8 +1,13 @@
-.section-homepage-images {
-  display: flexbox;
-  flex-wrap: wrap;
+.homepage-title {
+  margin-left: 1%;
+  display: none;
 }
 
-.section-homepage-images h2 {
-  color: green
+.homepage-title h2 {
+  color: green;
+}
+
+.homepage-image-parent {
+  display: flex;
+  flex-wrap: wrap;
 }
