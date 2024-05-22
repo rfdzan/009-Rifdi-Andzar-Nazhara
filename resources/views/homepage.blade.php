@@ -10,7 +10,7 @@
         @foreach ($images as $name => $path)
         <a class="homepage-image-link" href="artwork?id={{$name}}">
             <div class="homepage-image-container">
-                <img class="homepage-img" src="{{$path}}" width="400px">
+                <img class="homepage-img" src="{{$path}}">
             </div>
         </a>
         @endforeach

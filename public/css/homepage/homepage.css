@@ -14,8 +14,16 @@
   top: 100px;
 }
 
+.homepage-image-container {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  margin: 2px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
 .homepage-image-link {
-  margin: 5px;
   transition: transform 0.2s;
 }
 
