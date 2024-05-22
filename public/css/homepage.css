@@ -1,0 +1,8 @@
+.section-homepage-images {
+  display: flexbox;
+  flex-wrap: wrap;
+}
+
+.section-homepage-images h2 {
+  color: green
+}

@@ -1,5 +1,5 @@
 <section class="navbar">
-    <div class="top-bar-container">
+    <div class="default-container">
         <div class="img-container">
             <a href="/">
                 <img class="site-logo" src="{{asset('placeholder_logo.png')}}" width="50" height="50">

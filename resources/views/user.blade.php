@@ -1,6 +1,7 @@
 @extends('layout.default')
 @section('content')
 <!-- User section -->
+<link rel="stylesheet" href="{{asset('css/user.css')}}">
 <div class="div-user-artworks">
     <div class="user-works-title">
         <h2>Works</h2>
