@@ -3,8 +3,8 @@ body {
   margin: auto;
 }
 
-.default-container {
-  align-content: flex-start;
+.navbar-container {
+  align-items: center;
   display: flex;
   flex-direction: row;
   padding-top: 5px;
@@ -26,10 +26,6 @@ body {
   flex: 1 1 auto;
 }
 
-#main-search {
-  flex: 2 2 auto;
-  width: 500px;
-}
 
 .home-link-container {
   display: flex;
@@ -40,7 +36,6 @@ body {
 
 
 .home-link-container p {
-  display: flex;
   color: rgb(27, 26, 23);
 }
 
