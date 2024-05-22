@@ -5,6 +5,7 @@ body {
 
 #navbar {
   position: fixed;
+  z-index: 1;
 }
 
 .navbar-container {
