@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/default/sign-in-button.css">
+<link rel="stylesheet" href="css/default/home-button.css">
 <section class="navbar">
     <div class="default-container">
         <div class="site-logo-container">
@@ -6,7 +8,7 @@
             </a>
         </div>
         <div class="home-link-container">
-            <a href="/">
+            <a class="home-link-button" href="/">
                 <p>Home</p>
             </a>
         </div>
@@ -17,7 +19,7 @@
             </form>
         </div>
         <div class="sign-in-container">
-            <a href="/registration">
+            <a class="sign-in-button" href="/registration">
                 <p>Sign Up/Log in</p>
             </a>
         </div>

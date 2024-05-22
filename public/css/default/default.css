@@ -1,4 +1,5 @@
 body {
+  background-color: rgb(27, 26, 23);
   margin: auto;
 }
 
@@ -33,12 +34,16 @@ body {
 .home-link-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex: 1 1 auto;
 }
 
+
 .home-link-container p {
-  color: rgb(240, 227, 202);
+  display: flex;
+  color: rgb(27, 26, 23);
 }
+
 
 .sign-in-container {
   display: flex;
@@ -49,5 +54,5 @@ body {
 }
 
 .sign-in-container p {
-  color: rgb(240, 227, 202);
+  color: rgb(27, 26, 23);
 }

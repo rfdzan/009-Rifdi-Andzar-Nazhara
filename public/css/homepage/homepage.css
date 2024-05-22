@@ -1,0 +1,26 @@
+.homepage-title {
+  margin-left: 1%;
+  display: none;
+}
+
+.homepage-title h2 {
+  color: green;
+}
+
+.homepage-image-parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.homepage-image-link {
+  margin: 5px;
+  transition: transform 0.2s;
+}
+
+.homepage-img {
+  border-radius: 5px;
+}
+
+.homepage-image-link:hover {
+  transform: scale(1.1);
+}
