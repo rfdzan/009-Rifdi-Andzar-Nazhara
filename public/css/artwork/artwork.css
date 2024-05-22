@@ -1,0 +1,9 @@
+#artwork {
+  position: relative;
+  top: 85px;
+  display: flex;
+}
+
+.div-artwork h2 {
+  color: white;
+}
