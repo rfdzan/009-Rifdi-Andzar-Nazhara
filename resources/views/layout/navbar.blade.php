@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="css/default/sign-in-button.css">
 <link rel="stylesheet" href="css/default/home-button.css">
 <link rel="stylesheet" href="css/default/search.css">
-<section class="navbar">
+<section id="navbar">
     <div class="navbar-container">
         <div class="site-logo-container">
             <a href="/">
@@ -13,11 +13,9 @@
                 <p>Home</p>
             </a>
         </div>
-        <div class="search-box-container">
-            <form id="search-form">
-                <input id="main-search" type="search" name="q" placeholder="Search..">
-            </form>
-        </div>
+        <form id="search-form">
+            <input id="input-field-search" type="search" name="q" placeholder="Search..">
+        </form>
         <div class="sign-in-container">
             <a class="sign-in-button" href="/registration">
                 <p>Sign Up/Log in</p>

@@ -3,6 +3,29 @@
   width: 100%;
 }
 
-#main-search {
+#input-field-search {
   width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  border-color: rgb(240, 227, 202);
+  border-style: solid;
+  border-width: thin;
+  background-color: transparent;
+  border-radius: 50px;
+  outline: none;
+  color: white;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  max-width: 50%;
+}
+
+#input-field-search::placeholder {
+  color: white;
+}
+
+#input-field-search:focus {
+  border: 2px solid #ffffff;
 }

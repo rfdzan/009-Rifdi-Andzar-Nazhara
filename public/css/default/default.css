@@ -3,12 +3,19 @@ body {
   margin: auto;
 }
 
+#navbar {
+  position: fixed;
+}
+
 .navbar-container {
+  position: fixed;
   align-items: center;
   display: flex;
   flex-direction: row;
   padding-top: 5px;
+  padding-bottom: 5px;
   width: 100%;
+  background-color: rgb(27, 26, 23);
 }
 
 .search-box-container {
