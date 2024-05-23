@@ -3,6 +3,7 @@ function moveAuthorCard(authorCard, moveDown) {
     authorCard.style.marginLeft = "0px";
     authorCard.style.marginRight = "0px";
     authorCard.style.width = "100%";
+    return;
   }
   authorCard.style.marginLeft = "5px";
   authorCard.style.marginRight = "5px";
