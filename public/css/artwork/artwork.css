@@ -2,8 +2,50 @@
   position: relative;
   top: 85px;
   display: flex;
+  justify-content: center;
+
 }
 
-.div-artwork h2 {
+.artwork-card {
+  display: flex;
+  width: 700px;
+  height: 600px;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: rgb(57, 53, 52);
+}
+
+.artwork-card h2 {
   color: white;
+  font-size: 12pt;
+}
+
+.artwork-description h3 {
+  color: white;
+}
+
+.artwork-description p {
+  color: white;
+}
+
+.artwork-container {
+  padding-top: 5%;
+}
+
+.author-link {
+  color: white;
+  text-decoration: none;
+}
+
+.author-card {
+  display: flex;
+  margin-left: 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: rgb(57, 53, 52);
+}
+
+.author-container {
+  padding-left: 10px;
 }
