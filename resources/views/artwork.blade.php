@@ -6,14 +6,14 @@
     <div class="artwork-card">
         <div class="artwork-container">
             <img src="{{$path}}" width="500px">
-            <h2>{{$artwork_name}}</h2>
         </div>
     </div>
     <div class="author-card">
         <div class="author-container">
-            <h3>Author:</h3>
+            <h2 class="artwork-title">{{$artwork_name}}</h2>
             <a class="author-link" href="/{{$author}}">
                 <p>{{$author}}</p>
+            </a>
         </div>
     </div>
 </section>
