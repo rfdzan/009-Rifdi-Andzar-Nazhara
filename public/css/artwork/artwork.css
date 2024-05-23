@@ -3,9 +3,10 @@
   position: relative;
   top: 100px;
   height: 100%;
+  flex-direction: row;
 }
 
-.artwork-card {
+#artwork-card {
   display: flex;
   height: 100%;
   min-height: 50%;
@@ -44,13 +45,10 @@
   text-decoration: none;
 }
 
-.author-card {
-  position: relative;
-  padding-left: 10px;
-  padding-right: 4px;
+#author-card {
   display: flex;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 18%;
   min-width: 18%;
   max-height: 100%;
@@ -61,9 +59,10 @@
   flex-shrink: 1;
 }
 
-.author-container {
+#author-container {
   max-width: 100%;
   width: 100%;
+  padding-left: 5px;
   inline-size: min-content;
   overflow-wrap: break-word;
 }
