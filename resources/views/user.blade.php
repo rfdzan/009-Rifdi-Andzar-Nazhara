@@ -6,19 +6,7 @@
     <div class="upload-button-container">
         <button class="upload-button">Upload</button>
     </div>
-    <!-- upload -->
-    <div class="popup-form">
-        <form class="user-upload-form" action="{{ route('artwork_upload', $name)}}" method="post" enctype="multipart/form-data">
-            @csrf
-            <div>
-                <label for="file">Upload</label>
-                <input id="upload-artwork" type="file" name="file[]" accept="image/*" multiple>
-                <input type="submit" value="Submit">
-            </div>
-            <button id="clear-file">Clear</button>
-        </form>
-        <script src="{{asset('js/upload.js')}}"></script>
-    </div>
+    @include('upload_form')
     <div class="user-page">
         <div class="user-artworks">
             @foreach ($artworks as $art)
