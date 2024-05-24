@@ -1,29 +1,46 @@
+.user-page {
+  display: flex;
+  position: relative;
+  top: 100px;
+  width: 100%;
+}
+
+.user-artworks {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+
+.user-artwork-container {
+  width: 200px;
+  height: 200px;
+  margin: 2px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.user-artwork-container img {
+  border-radius: 5px;
+}
+
 .user-upload-form {
+  display: none;
   margin-right: 2%;
 }
 
 .user-upload {
   right: 60%;
   margin-top: 5%;
-  width: 20%;
-  float: left;
-}
-
-.div-user-artworks h2 {
-  color: blue;
-}
-
-.div-user-sidebar {
   width: 30%;
   float: left;
 }
 
-.user-works-title {
-  width: 80%;
-  float: left;
-}
-
-.div-user-artworks {
-  width: 70%;
-  float: left;
+.user-description {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: left;
+  color: white;
 }
