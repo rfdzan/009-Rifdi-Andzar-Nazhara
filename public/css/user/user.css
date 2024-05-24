@@ -25,9 +25,36 @@
   border-radius: 5px;
 }
 
-.user-upload-form {
-  display: none;
+.user-description {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: left;
+  color: white;
+}
+
+.upload-button-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 100px;
+  width: 70%;
+}
+
+.upload-button {
+  outline: none;
+}
+
+.popup-form {
+  position: absolute;
+  display: flex;
+  background-color: #fff;
   margin-right: 2%;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100;
+  z-index: 1;
 }
 
 .user-upload {
@@ -35,12 +62,4 @@
   margin-top: 5%;
   width: 30%;
   float: left;
-}
-
-.user-description {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  justify-content: left;
-  color: white;
 }
