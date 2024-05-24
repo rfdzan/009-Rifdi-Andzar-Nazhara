@@ -1,6 +1,7 @@
 @extends('layout.default')
 @section('content')
 <!-- User section -->
+<link rel="stylesheet" href="{{asset('css/user/user.css')}}">
 <div class="div-user-artworks">
     <div class="user-works-title">
         <h2>Works</h2>
@@ -15,7 +16,7 @@
             </div>
         </form>
         <button id="clear-file">Clear</button>
-        <script src="{{asset('upload.js')}}"></script>
+        <script src="{{asset('js/upload.js')}}"></script>
     </div>
     @foreach ($artworks as $art)
     <a href="artwork?id={{$art->id}}"><img src="{{$art->path}}" width="300px"></a>

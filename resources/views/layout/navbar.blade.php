@@ -1,24 +1,24 @@
-<section class="navbar">
-    <div class="top-bar-container">
-        <div class="img-container">
+<link rel="stylesheet" href="css/default/sign-in-button.css">
+<link rel="stylesheet" href="css/default/home-button.css">
+<link rel="stylesheet" href="css/default/search.css">
+<section id="navbar">
+    <div class="navbar-container">
+        <div class="site-logo-container">
             <a href="/">
-                <img class="site-logo" src="{{asset('placeholder_logo.png')}}" width="50" height="50">
+                <img class="site-logo" src="{{asset('logo.svg')}}">
             </a>
         </div>
         <div class="home-link-container">
-            <a href="/">
-                <p class="home-link">Home</p>
+            <a class="home-link-button" href="/">
+                <p>Home</p>
             </a>
         </div>
-        <div class="search-box-container">
-            <form id="search-box">
-                <input id="main-search" type="search" name="q" placeholder="Search..">
-                <button>Search</button>
-            </form>
-        </div>
+        <form id="search-form">
+            <input id="input-field-search" type="search" name="q" placeholder="Search..">
+        </form>
         <div class="sign-in-container">
-            <a href="/registration">
-                <p class="sign-in-text">Sign Up/Log in</p>
+            <a class="sign-in-button" href="/registration">
+                <p>Sign Up/Log in</p>
             </a>
         </div>
     </div>

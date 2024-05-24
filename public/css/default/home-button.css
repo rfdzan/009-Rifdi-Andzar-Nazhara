@@ -1,0 +1,10 @@
+.home-link-button {
+  text-decoration: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 100px;
+  border-radius: 10px;
+  background-color: rgb(255, 131, 3);
+}

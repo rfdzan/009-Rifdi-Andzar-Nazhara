@@ -1,0 +1,73 @@
+html * {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+
+}
+
+body {
+  background-color: rgb(27, 26, 23);
+  margin: auto;
+}
+
+#navbar {
+  position: fixed;
+  z-index: 1;
+}
+
+.navbar-container {
+  position: fixed;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  background-color: rgb(27, 26, 23);
+}
+
+.search-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.site-logo-container {
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0.5%;
+  padding-top: 5px;
+  display: flex;
+}
+
+.site-logo {
+  width: 70px;
+  height: 70px;
+  flex: 1 1 auto;
+}
+
+
+.home-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+
+.home-link-container p {
+  color: rgb(27, 26, 23);
+}
+
+
+.sign-in-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1 1 auto;
+  padding-right: 1%;
+}
+
+.sign-in-container p {
+  color: rgb(27, 26, 23);
+}

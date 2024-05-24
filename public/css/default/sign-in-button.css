@@ -1,0 +1,16 @@
+.sign-in-button {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: rgb(255, 131, 3);
+  transition: background-color 0.2s linear;
+}
+
+.sign-in-button:hover {
+  transition: background-color 0.2s linear;
+  background-color: rgb(255, 150, 30);
+}
