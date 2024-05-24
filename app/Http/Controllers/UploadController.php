@@ -18,6 +18,9 @@ class UploadController extends Controller
         if (count($id_array) > 1) {
             return view('upload', ["upload_msg" => "BUG: duplicate name found for: {$name}"]);
         }
+        if ($files === null) {
+            return view('upload', ["upload_msg" => "No pictures selected"]);
+        }
         $id = array_pop($id_array)->id;
         foreach ($files as $file) {
             $generated_id = Storage::disk('jda')->putFile('', $file);

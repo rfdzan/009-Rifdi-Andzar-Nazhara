@@ -10,21 +10,20 @@
   outline: none;
 }
 
-.popup-form {
-  position: absolute;
+.popup-form-container {
   display: flex;
-  background-color: #fff;
-  margin-right: 2%;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100;
-  z-index: 1;
+  justify-content: center;
+  align-content: center;
 }
 
-.user-upload {
-  right: 60%;
-  margin-top: 5%;
-  width: 30%;
-  float: left;
+.popup-form {
+  position: fixed;
+  display: flex;
+  background-color: #fff;
+  width: 300px;
+  height: 300px;
+  top: 30%;
+  z-index: 1;
+  padding: 5px;
+  border-radius: 5px;
 }
