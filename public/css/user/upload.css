@@ -4,6 +4,7 @@
   position: relative;
   top: 100px;
   width: 70%;
+  flex-shrink: 1;
 }
 
 .upload-button {
@@ -25,5 +26,32 @@
   top: 30%;
   z-index: 1;
   padding: 5px;
+  flex-shrink: 1;
   border-radius: 5px;
+  flex-direction: column;
+}
+
+.submit-button-container {
+  position: relative;
+  display: flex;
+  background-color: red;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  top: 56%;
+  left: 35%;
+  width: 100px;
+  height: 30px;
+}
+
+.browse-files-link {
+  color: rgb(255, 131, 3);
+}
+
+.input-file-browser {
+  display: none;
+}
+
+.input-submit-files {
+  display: none;
 }
