@@ -45,6 +45,7 @@
 }
 
 .browse-files-link {
+  cursor: pointer;
   color: rgb(255, 131, 3);
 }
 
