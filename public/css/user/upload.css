@@ -11,6 +11,13 @@
   outline: none;
 }
 
+#close-upload-popup {
+  display: flex;
+  text-align: right;
+  margin: 0px 1px;
+  cursor: pointer;
+}
+
 .popup-form-container {
   display: flex;
   justify-content: center;
@@ -34,15 +41,17 @@
 .submit-button-container {
   position: relative;
   display: flex;
-  background-color: red;
+  cursor: pointer;
+  background-color: rgb(255, 131, 3);
   border-radius: 5px;
   justify-content: center;
   align-items: center;
-  top: 56%;
+  top: 145px;
   left: 35%;
   width: 100px;
   height: 30px;
 }
+
 
 .browse-files-link {
   cursor: pointer;

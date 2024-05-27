@@ -47,6 +47,6 @@ class UploadController extends Controller
             )", ["user_id" => $id, "title" => $generated_id, "timestamp" => $current_time, "source" => $image_path, "generated_unique_name" => $generated_id, "category" => "image"]);
         }
         DB::commit();
-        return view('upload', ["upload_msg" => "Upload complete!"]);
+        return redirect()->route("home");
     }
 }
