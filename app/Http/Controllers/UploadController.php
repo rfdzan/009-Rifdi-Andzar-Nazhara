@@ -18,6 +18,9 @@ class UploadController extends Controller
         if (count($id_array) > 1) {
             return view('upload', ["upload_msg" => "BUG: duplicate name found for: {$name}"]);
         }
+        if ($files === null) {
+            return view('upload', ["upload_msg" => "No pictures selected"]);
+        }
         $id = array_pop($id_array)->id;
         foreach ($files as $file) {
             $generated_id = Storage::disk('jda')->putFile('', $file);
@@ -44,6 +47,6 @@ class UploadController extends Controller
             )", ["user_id" => $id, "title" => $generated_id, "timestamp" => $current_time, "source" => $image_path, "generated_unique_name" => $generated_id, "category" => "image"]);
         }
         DB::commit();
-        return view('upload', ["upload_msg" => "Upload complete!"]);
+        return redirect()->route("home");
     }
 }

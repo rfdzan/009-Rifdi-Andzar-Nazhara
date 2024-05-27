@@ -1,0 +1,67 @@
+.upload-button-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 100px;
+  width: 70%;
+  flex-shrink: 1;
+}
+
+.upload-button {
+  outline: none;
+}
+
+#close-upload-popup {
+  display: flex;
+  text-align: right;
+  margin: 0px 1px;
+  cursor: pointer;
+}
+
+.popup-form-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.popup-form {
+  position: fixed;
+  display: none;
+  background-color: #fff;
+  width: 300px;
+  height: 300px;
+  top: 30%;
+  z-index: 1;
+  padding: 5px;
+  flex-shrink: 1;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+.submit-button-container {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  background-color: rgb(255, 131, 3);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  top: 145px;
+  left: 35%;
+  width: 100px;
+  height: 30px;
+}
+
+
+.browse-files-link {
+  cursor: pointer;
+  color: rgb(255, 131, 3);
+}
+
+.input-file-browser {
+  display: none;
+}
+
+.input-submit-files {
+  display: none;
+}
