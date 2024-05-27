@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/user/user.css')}}">
 <section class="user-page-section">
     <div class="upload-button-container">
-        <button class="upload-button">Upload</button>
+        <button class="upload-button" id="upload-button">Upload</button>
     </div>
     @include('upload_form')
     <div class="user-page">

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{asset('css/user/upload.css')}}">
 <div class="popup-form-container">
-    <div class="popup-form">
+    <div class="popup-form" id="popup-form">
         <div class="drag-drop-outline">
             <form class="user-upload-form" action="{{ route('artwork_upload', $name)}}" method="post" enctype="multipart/form-data">
                 @csrf
