@@ -29,5 +29,10 @@ class RegistrationController extends Controller
         if ($existingUser !== null) {
             return redirect()->route('registration')->with(['userExistmsg' => "Username '{$username}' already exists."]);
         }
+        return redirect()->route('home');
+        // insert user,email,pass to db.
+        // mark as logged in.
+        // - store marker + username to cookies via session.
+        // redirect to home route
     }
 }
