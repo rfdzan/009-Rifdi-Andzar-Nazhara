@@ -8,6 +8,16 @@ define("USERNAME", "username");
 define("EMAIL", "email");
 define("PASSWORD", "password");
 
+function handleLogin(string $username, bool $isLoggedin, bool $regenerateSession)
+{
+    if ($regenerateSession) {
+        request()->session()->regenerate();
+    }
+    $sessionId = session()->getId();
+    cookie("sessionId", $sessionId, 1440);
+    request()->session()->put("isLoggedin", $isLoggedin);
+    request()->session()->put("user", $username);
+}
 class RegistrationController extends Controller
 {
     function login()
@@ -25,8 +35,15 @@ class RegistrationController extends Controller
         if (strcmp($password, $selectPassword->password) !== 0) {
             return redirect()->route('login')->with(['userExistmsg' => "Wrong password."]);
         }
+        handleLogin($username, true, true);
         // var_dump($selectPassword);
         return redirect()->route('user', ["user" => $username]);
+    }
+    function logout()
+    {
+        cookie()->forget("sessionId");
+        request()->session()->invalidate();
+        return redirect()->route('home');
     }
     function register()
     {
@@ -50,9 +67,7 @@ class RegistrationController extends Controller
             :email,
             :password
         )", ["username" => $username, "email" => $email, "password" => $password]);
-        // mark as logged in.
-        // - store marker + username to cookies via session.
-        // redirect to home route
+        handleLogin($username, true, true);
         return redirect()->route('home');
     }
 }

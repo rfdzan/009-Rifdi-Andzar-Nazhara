@@ -33,6 +33,8 @@ Route::get("/login", function () {
 
 Route::post("/verify", [RegistrationController::class, "login"])->name("verify");
 
+Route::get("/logout", [RegistrationController::class, "logout"])->name('logout');
+
 Route::get('/artwork', function () {
     $controller = new ImageController();
     $id = request()->get('id');
