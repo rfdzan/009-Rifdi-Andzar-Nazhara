@@ -1,0 +1,8 @@
+.err {
+  position: relative;
+  top: 100px;
+}
+
+.err h2 {
+  color: white
+}

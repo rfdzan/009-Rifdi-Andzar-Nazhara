@@ -17,7 +17,7 @@
             <input id="input-field-search" type="search" name="q" placeholder="Search..">
         </form>
         <div class="sign-in-container">
-            <a class="sign-in-button" href="/registration">
+            <a class="sign-in-button" href="{{route('login')}}">
                 <p>Sign Up/Log in</p>
             </a>
         </div>
