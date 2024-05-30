@@ -13,13 +13,13 @@ class UploadController extends Controller
         DB::beginTransaction();
         $id_array = DB::select("SELECT (id) FROM user WHERE username = :name", ["name" => $name]);
         if (count($id_array) === 0) {
-            return view('upload', ["upload_msg" => "user {$name} not found"]);
+            return redirect()->route('err_page')->with(["msg" => "User {$name} was not found."]);
         }
         if (count($id_array) > 1) {
-            return view('upload', ["upload_msg" => "BUG: duplicate name found for: {$name}"]);
+            return redirect()->route('err_page')->with(["msg" => "BUG: duplicate name found for: {$name}"]);
         }
         if ($files === null) {
-            return view('upload', ["upload_msg" => "No pictures selected"]);
+            return redirect()->route('err_page')->with(["msg" => "No files selected"]);
         }
         $id = array_pop($id_array)->id;
         foreach ($files as $file) {
@@ -28,7 +28,7 @@ class UploadController extends Controller
             $image_path = 'jda/' . $generated_id;
             if ($generated_id === false) {
                 DB::rollBack();
-                return view('upload', ["upload_msg" => "Upload failed"]);
+                return redirect()->route('err_page')->with(["msg" => "Upload failed."]);
             }
             DB::insert("INSERT INTO illustration(
                 user_id,
