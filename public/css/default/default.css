@@ -14,15 +14,31 @@ body {
 }
 
 .navbar-container {
+  display: flex;
   position: fixed;
   align-items: center;
-  display: flex;
-  flex-direction: row;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom: 5px;
   width: 100%;
   background-color: rgb(27, 26, 23);
+}
+
+.is-logged-in {
+  display: flex;
+  margin: 0% 7%;
+}
+
+.logout-link-p {
+  display: flex;
+  margin: 0% 3%;
+}
+
+.is-logged-in-link,
+.logout-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .search-box-container {
