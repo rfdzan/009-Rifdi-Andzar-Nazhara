@@ -16,20 +16,20 @@
         <form id="search-form">
             <input id="input-field-search" type="search" name="q" placeholder="Search..">
         </form>
-        @if (session()->has('user'))
+        @if (session()->has(request()->cookie('sessionId')))
         <div class="is-logged-in">
-            <p style="color:white"><a href="{{route('user', session()->get('user'))}}">{{session()->get('user')}}</a></p>
+            <p style="color:white"><a href="{{route('user', session()->get(request()->cookie('sessionId'))['user'])}}">{{session()->get(request()->cookie('sessionId'))["user"]}}</a></p>
         </div>
         @endif
-        @if (!session()->has('user'))
+        @if (!session()->has(request()->cookie('sessionId')))
         <div class="sign-in-container">
             <a class="sign-in-button" href="{{route('login')}}">
                 <p>Sign Up/Log in</p>
             </a>
         </div>
         @endif
-        @if (session()->get('isLoggedin'))
-        <p><a href="{{route('logout')}}">logout</a></p>
+        @if (session()->has(request()->cookie('sessionId')))
+        <p><a href="{{route('logout')}}">Logout</a></p>
         @endif
     </div>
 </section>

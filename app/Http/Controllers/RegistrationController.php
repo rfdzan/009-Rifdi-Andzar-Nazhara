@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
 define("USERNAME", "username");
@@ -14,9 +15,11 @@ function handleLogin(string $username, bool $isLoggedin, bool $regenerateSession
         request()->session()->regenerate();
     }
     $sessionId = session()->getId();
-    cookie("sessionId", $sessionId, 1440);
-    request()->session()->put("isLoggedin", $isLoggedin);
-    request()->session()->put("user", $username);
+    $cookie = cookie("sessionId", $sessionId, 1440);
+    request()->session()->put($sessionId, ["isLoggedin" => $isLoggedin, "user" => $username]);
+    return $cookie;
+    // request()->session()->put("isLoggedin", $isLoggedin);
+    // request()->session()->put("user", $username);
 }
 class RegistrationController extends Controller
 {
@@ -35,9 +38,9 @@ class RegistrationController extends Controller
         if (strcmp($password, $selectPassword->password) !== 0) {
             return redirect()->route('login')->with(['userExistmsg' => "Wrong password."]);
         }
-        handleLogin($username, true, true);
+        $cookie = handleLogin($username, true, true);
         // var_dump($selectPassword);
-        return redirect()->route('user', ["user" => $username]);
+        return redirect()->route('user', ["user" => $username])->withCookie($cookie);
     }
     function logout()
     {
