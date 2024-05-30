@@ -8,13 +8,15 @@
 .user-artworks {
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 0;
-  flex-shrink: 2;
+  flex-grow: 0.5;
+  flex-shrink: 1;
+  max-width: 70%;
+  width: 100%;
 }
 
 
 .user-artwork-container {
-  width: 200px;
+  width: 190px;
   height: 200px;
   margin: 2px;
   overflow: hidden;

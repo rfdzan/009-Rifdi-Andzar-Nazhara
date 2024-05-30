@@ -18,7 +18,7 @@
         </form>
         @if (session()->has(request()->cookie('sessionId')))
         <div class="is-logged-in">
-            <p style="color:white"><a href="{{route('user', session()->get(request()->cookie('sessionId'))['user'])}}">{{session()->get(request()->cookie('sessionId'))["user"]}}</a></p>
+            <p style="color:white"><a class="is-logged-in-link" href="{{route('user', session()->get(request()->cookie('sessionId'))['user'])}}">{{session()->get(request()->cookie('sessionId'))["user"]}}</a></p>
         </div>
         @endif
         @if (!session()->has(request()->cookie('sessionId')))
@@ -29,7 +29,7 @@
         </div>
         @endif
         @if (session()->has(request()->cookie('sessionId')))
-        <p><a href="{{route('logout')}}">Logout</a></p>
+        <p class="logout-link-p"><a class="logout-link" href="{{route('logout')}}">Logout</a></p>
         @endif
     </div>
 </section>
