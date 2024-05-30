@@ -4,14 +4,37 @@ namespace webRoute;
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, "homepage"])->name("home");
+
 Route::get('/registration', function () {
-    return view('registration');
-});
+    $msg = "";
+    $userExists = session()->get("userExistmsg");
+    if (strlen($userExists) !== 0) {
+        $msg = $userExists;
+    }
+    return view('registration', ["userExist" => $msg]);
+})->name('registration');
+
+Route::post('/register', [RegistrationController::class, "register"])->name("register");
+
+Route::get("/login", function () {
+    $msg = "";
+    $userExists = session()->get("userExistmsg");
+    if (strlen($userExists) !== 0) {
+        $msg = $userExists;
+    }
+    return view("login", ["userExist" => $msg]);
+})->name("login");
+
+Route::post("/verify", [RegistrationController::class, "login"])->name("verify");
+
+Route::get("/logout", [RegistrationController::class, "logout"])->name('logout');
+
 Route::get('/artwork', function () {
     $controller = new ImageController();
     $id = request()->get('id');
@@ -23,12 +46,15 @@ Route::get('/artwork', function () {
     }
     return redirect()->route('err_page')->with(['msg' => "artwork of id '{$id}' was not found"]);
 });
+
 Route::get('/error', function () {
     $msg = session()->get('msg');
     return view('err', ['msg' => $msg]);
 })->name('err_page');
+
 Route::post(
     '/{user}/upload',
     [UploadController::class, "upload"]
 )->name("artwork_upload");
+
 Route::get('/{user}', [UserController::class, "getUserPage"])->name("user");
