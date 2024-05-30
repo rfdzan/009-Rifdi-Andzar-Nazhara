@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
 define("USERNAME", "username");
@@ -70,7 +69,7 @@ class RegistrationController extends Controller
             :email,
             :password
         )", ["username" => $username, "email" => $email, "password" => $password]);
-        handleLogin($username, true, true);
-        return redirect()->route('home');
+        $cookie = handleLogin($username, true, true);
+        return redirect()->route('user', ["user" => $username])->withCookie($cookie);
     }
 }
