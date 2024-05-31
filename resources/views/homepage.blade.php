@@ -6,6 +6,7 @@
     <div class="homepage-title">
         <h2>Recent Works</h2>
     </div>
+    @if (count($images) !== 0)
     <div class="homepage-image-parent">
         @foreach ($images as $name => $path)
         <a class="homepage-image-link" href="artwork?id={{$name}}">
@@ -15,5 +16,6 @@
         </a>
         @endforeach
     </div>
+    @endif
 </section>
 @endsection

@@ -48,7 +48,7 @@ Route::get('/artwork', function () {
 });
 
 Route::get('/error', function () {
-    $msg = session()->get('msg');
+    $msg = request()->session()->get('msg');
     return view('err', ['msg' => $msg]);
 })->name('err_page');
 
